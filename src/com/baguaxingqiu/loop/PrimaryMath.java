@@ -13,7 +13,6 @@ public class PrimaryMath {
 					for (int d = -100; d < 100; d++) {
 						if (a+b == 8 && c-d == 6 && a+c == 14 && b+d == 10) {
 							System.out.println("a="+a+"\n"+"b="+b+"\n"+"c="+c+"\n"+"d="+d);
-	
 						}
 					}
 				}
