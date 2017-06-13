@@ -9,7 +9,6 @@ public class StrengthenForLoop {
 	public static void main(String[] args) {
 		
 		
-
 	}
 
 }
