@@ -20,16 +20,21 @@ public class TwoDimensionalArray {
 		}
 		
 		int temp = 0;
+		int x = 0;
+		int y = 0;
 		//找到最大值
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[i].length; j++) {
 				if (a[i][j] > temp) {
 					temp = a[i][j];
+					x = i;
+					y = j;
 				}
 			}
 		}
 		
 		System.out.println("max is:"+temp);
+		System.out.println("The coordinate is"+"("+x+","+y+")");
 		
 		
 	}
