@@ -10,7 +10,9 @@ public class TwoDimensionaSort {
 		借助Arrays的方法对二维数组进行排序。
 	 */
 	public static void main(String[] args) {
-	    //生成
+	    //先把二维数组使用System.arraycopy进行数组复制到一个一维数组
+		//然后使用sort进行排序
+		//最后再复制回到二维数组。
 		int a[][] = new int[5][8];
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[i].length; j++) {
@@ -24,7 +26,8 @@ public class TwoDimensionaSort {
 		int b[] = new int[40];
 		
 		for (int i = 0; i < a.length; i++) {
-			b = Arrays.copyOfRange(a[i], 0, 8);
+			System.arraycopy(a[i], 0, b, i*8, 8);
+			//用System.arraycopy不能用Arrays.copyOfRange
 		}
 		
 		Arrays.sort(b);
