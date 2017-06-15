@@ -26,7 +26,12 @@ public class SupportHero extends Hero{
 	}
 	
 	public static void main(String[] args) {
-		
+		SupportHero sh = new SupportHero();
+		Hero hero = new Hero();
+		hero.name = "À×Å·";
+		sh.heal();
+		sh.heal(hero);
+		sh.heal(hero, 2);
 
 	}
 
