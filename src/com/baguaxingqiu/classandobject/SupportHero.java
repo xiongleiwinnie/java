@@ -2,6 +2,10 @@ package com.baguaxingqiu.classandobject;
 
 public class SupportHero extends Hero{
 
+	public SupportHero(String heroname) {
+		super(heroname);
+	}
+
 	/**
 	 * @param args
 	 *  涉及一个类Support (辅助英雄)继承Hero，提供一个heal(治疗)方法
@@ -26,8 +30,8 @@ public class SupportHero extends Hero{
 	}
 	
 	public static void main(String[] args) {
-		SupportHero sh = new SupportHero();
-		Hero hero = new Hero();
+		SupportHero sh = new SupportHero("");
+		Hero hero = new Hero("");
 		hero.name = "雷欧";
 		sh.heal();
 		sh.heal(hero);

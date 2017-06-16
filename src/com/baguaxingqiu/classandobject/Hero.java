@@ -9,13 +9,31 @@ public class Hero {
     float armor; //护甲
       
     int moveSpeed; //移动速度
+    
+  //带一个参数的构造方法
+    public Hero(String heroname){  
+        name = heroname;
+    }
+      
+    //带两个参数的构造方法
+    public Hero(String heroname,float herohp){  
+        name = heroname;
+        hp = herohp;
+    }
+    
+    public Hero(String heroName, float heroHP ,float heroArmor, int heroMoveSpeed) {
+	 name = heroName;
+	 hp = heroHP;
+	 armor = heroArmor;
+	 moveSpeed = heroMoveSpeed;
+    }
       
     public static void main(String[] args) {
         //创建一个对象
-        new Hero();
+//        new Hero();
          
         //使用一个引用来指向这个对象
-        Hero h = new Hero();
+//        Hero h = new Hero();
          
     }   
       
