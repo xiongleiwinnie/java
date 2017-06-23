@@ -10,6 +10,10 @@ public class Hero {
       
     int moveSpeed; //移动速度
     
+    public Hero(){
+    	
+    }
+    
   //带一个参数的构造方法
     public Hero(String heroname){  
         name = heroname;
