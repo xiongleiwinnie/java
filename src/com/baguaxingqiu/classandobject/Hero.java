@@ -1,8 +1,10 @@
 package com.baguaxingqiu.classandobject;
 
+import com.baguaxingqiu.implementandextend.Mortal;
+
 public class Hero {
     
-    String name; //姓名
+    String name = ""; //姓名
       
     float hp; //血量
       
@@ -31,6 +33,13 @@ public class Hero {
 	 armor = heroArmor;
 	 moveSpeed = heroMoveSpeed;
     }
+    
+    public void kill(Mortal m) {
+    	String name = this.name;
+    	System.out.println(name+"kills");
+    	m.die();
+    }
+
       
     public static void main(String[] args) {
         //创建一个对象
