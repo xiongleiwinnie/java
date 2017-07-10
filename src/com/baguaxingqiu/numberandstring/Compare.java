@@ -17,8 +17,20 @@ public class Compare {
 			short end = 'z'+1;
 			char a = (char)(Math.random()*(end-start)+start);
 			char b = (char)(Math.random()*(end-start)+start);
-			s = String()+String();
+			string = String.valueOf(a)+String.valueOf(b);
 		}
+		int count = 0;
+		for (int i = 0; i < s.length; i++) {
+			String string = s[i];
+			for (int j = 0; j < s.length; j++) {
+				String string1 = s[j];
+				if (string1.equalsIgnoreCase(string)){
+					count++;
+				}
+			}
+		}
+		
+		System.out.println(count);
 		
 
 	}
