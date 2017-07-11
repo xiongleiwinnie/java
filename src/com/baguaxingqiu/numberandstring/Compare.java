@@ -1,7 +1,5 @@
 package com.baguaxingqiu.numberandstring;
 
-import javax.xml.stream.events.EndDocument;
-
 public class Compare {
 
 	/**
@@ -12,20 +10,21 @@ public class Compare {
 	 */
 	public static void main(String[] args) {
 		String[] s = new String[100];
-		for (String string : s) {
-			short start = 0;
-			short end = 'z'+1;
-			char a = (char)(Math.random()*(end-start)+start);
-			char b = (char)(Math.random()*(end-start)+start);
-			string = String.valueOf(a)+String.valueOf(b);
+		for (int i = 0;i < s.length; i++) {
+			s[i] = randomString(2);
 		}
 		int count = 0;
-		for (int i = 0; i < s.length; i++) {
-			String string = s[i];
-			for (int j = 0; j < s.length; j++) {
-				String string1 = s[j];
+		for (String string:s) {
+			int repeat = 0;
+			//String string = s[i];
+			for (String string1:s) {
+				//String string1 = s[j];
 				if (string1.equalsIgnoreCase(string)){
-					count++;
+					repeat++;
+					if (2==repeat) {
+						count++;
+						break;
+					}
 				}
 			}
 		}
@@ -34,5 +33,27 @@ public class Compare {
 		
 
 	}
+	
+	private static String randomString(int length) {
+        String pool = "";
+        for (short i = '0'; i <= '9'; i++) {
+            pool += (char) i;
+        }
+        for (short i = 'a'; i <= 'z'; i++) {
+            pool += (char) i;
+        }
+        for (short i = 'A'; i <= 'Z'; i++) {
+            pool += (char) i;
+        }
+        char cs[] = new char[length];
+        for (int i = 0; i < cs.length; i++) {
+            int index = (int) (Math.random() * pool.length());
+            cs[i] = pool.charAt(index);
+        }
+        String result = new String(cs);
+        return result;
+    }
+	
+	
 
 }
