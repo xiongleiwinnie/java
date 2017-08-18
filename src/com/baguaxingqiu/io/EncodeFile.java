@@ -24,7 +24,7 @@ public class EncodeFile {
 	public static void main(String[] args) {
 		File encodingFile = new File("D:/encode.txt");
 		File encodedFile = new File("D:/decode.txt");
-		encodeFile(encodedFile,encodedFile);
+		encodeFile(encodingFile,encodedFile);
 
 	}
 
@@ -32,10 +32,44 @@ public class EncodeFile {
 		try {
 			FileReader fileReader = new FileReader(encodingFile);
 			FileWriter fileWriter = new FileWriter(encodedFile);
+			char[] fileContent = new char[(int) encodingFile.length()];
+			fileReader.read(fileContent);
+			encode(fileContent);
+			fileWriter.write(fileContent);
+			fileWriter.close();
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
+	}
+
+	private static void encode(char[] fileContent) {
+		for (int i = 0; i < fileContent.length; i++) {
+			char c = fileContent[i];
+			if (isLetterOrDigit(c)) {
+				switch (c) {
+				case '9':
+					c = '0';
+					break;
+				case 'z':
+					c = 'a';
+					break;
+				case 'Z':
+					c = 'A';
+					break;
+				default:
+					c++;
+					break;
+				}
+			}
+			fileContent[i] = c;
+		}
+		
+	}
+
+	private static boolean isLetterOrDigit(char c) {
+		String letterOrDigit = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		return -1 == letterOrDigit.indexOf(c)?false:true;
 	}
 
 }
