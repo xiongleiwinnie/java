@@ -20,7 +20,7 @@ public class PasswordThread extends Thread{
 	public PasswordThread(String password, List<String> passwords) {
 		this.password = password;
         this.passwords = passwords;
-        new LogThread(passwords).start();
+        
 	}
 	
 	public void run(){
